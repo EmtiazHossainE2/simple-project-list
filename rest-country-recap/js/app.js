@@ -10,7 +10,8 @@ const displayCountries = countries => {
     const container = document.getElementById('countries')
     container.innerHTML = countriesHTML.join(' ')
 }
-const getCountryHTML = country => {
+//original 
+/* const getCountryHTML = country => {
     return `
         <div class="country">
             <h2>${country.name.common}</h2>
@@ -19,5 +20,19 @@ const getCountryHTML = country => {
             <h4>${country.population}</h4>
         </div>
     `
+} */
+//optiona 1 destructuring
+const getCountryHTML = country => {
+    const { name, capital, population, flags } = country
+    return `
+        <div class="country">
+            <h2>${name.common}</h2>
+            <img src="${flags.png}"> 
+            <h4>${capital}</h4>
+            <h4>${population}</h4>
+        </div>
+    `
 }
+
+
 restCountries()
