@@ -21,8 +21,8 @@ const displayCountries = countries => {
         </div>
     `
 } */
-//optiona 1 destructuring
-const getCountryHTML = country => {
+//optiona 1 simple destructuring
+/* const getCountryHTML = country => {
     const { name, capital, population, flags } = country
     return `
         <div class="country">
@@ -32,7 +32,20 @@ const getCountryHTML = country => {
             <h4>${population}</h4>
         </div>
     `
+} */
+//option 2 parameter destructuring
+const getCountryHTML = ({ name, capital, population, flags }) => {
+    // const { name, capital, population, flags } = country
+    return `
+        <div class="country">
+            <h2>${name.common}</h2>
+            <img src="${flags.png}"> 
+            <h4>${capital}</h4>
+            <h4>${population}</h4>
+        </div>
+    `
 }
+
 
 
 restCountries()
